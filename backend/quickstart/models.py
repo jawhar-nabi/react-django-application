@@ -16,9 +16,8 @@ class Category(models.Model):
 
 class Book(models.Model):
     name_book = models.CharField(max_length=100)
-    name_auth = models.ForeignKey(Author, on_delete=models.CASCADE)
-    # fn_author = models.ForeignKey(Author, related_name='firstname_author', on_delete=models.CASCADE)
-    # name_cat = models.ForeignKey(Category, related_name='name_cat', on_delete=models.CASCADE)
+    author = models.ForeignKey(Author, related_name='nameauth',on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, related_name='namecat', on_delete=models.CASCADE)
     total_pages = models.IntegerField()
     publish_date = models.DateField()
 
