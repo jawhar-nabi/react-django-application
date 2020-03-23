@@ -5,6 +5,10 @@ export class test extends Component{
             <div>
             <h1>this is a test page.</h1>
             <h5>if you're reading this then the test succeded</h5>
+
+
+
+            
             </div>
         )
     }
