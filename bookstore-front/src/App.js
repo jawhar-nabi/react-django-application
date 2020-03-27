@@ -11,6 +11,7 @@ import {test} from './components/test';
 import {Footer} from './components/footer';
 import { Accueil } from './pages/accueil';
 import { Collaborateurs} from './components/collaborateurs';
+import { all } from './pages/all-books';
 
 
 class App extends Component {
@@ -20,17 +21,14 @@ class App extends Component {
         <div className="container">
           <Router>
             <Navbar /> 
-            <Nav />
-
-
-
-
             <Switch>
-              <Route exact path="/" component={home}/>
+              <Route exact path="/" component={Accueil}/>
               <Route  path="/login" component={LoginForm}/>
               <Route path="/product-detail" component={product}/>
               <Route path="/test" component={test}/>
               <Route path="/accueil" component={Accueil}/> 
+              <Route path="/shop" component={all}/> 
+
              
 
 
