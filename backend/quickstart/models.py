@@ -20,6 +20,7 @@ class Book(models.Model):
     category = models.ForeignKey(Category, related_name='namecat', on_delete=models.CASCADE)
     total_pages = models.IntegerField()
     publish_date = models.DateField()
+    cover = models.ImageField()
 
 
 
