@@ -17,6 +17,7 @@ import {Book} from './components/book';
 import {ListeBooks} from './pages/listeBooks';
 import {DetailBook} from './pages/detailBook';
 import {ChallengePage} from './pages/challengePage';
+import {product} from './components/product-detail';
 
 
 
@@ -49,10 +50,7 @@ class App extends Component {
               <Route path="/detailBook" component={DetailBook}/> 
               <Route path="/challengePage" component={ChallengePage}/> 
 
-              <Route exact path="/" component={Accueil}/>
-              <Route  path="/login" component={LoginForm}/>
               <Route path="/product-detail" component={product}/>
-              <Route path="/test" component={test}/>
               <Route path="/accueil" component={Accueil}/> 
               <Route path="/shop" component={all}/> 
 
