@@ -49,7 +49,6 @@ class App extends Component {
               <Route path="/listeBooks" component={ListeBooks}/> 
               <Route path="/detailBook" component={DetailBook}/> 
               <Route path="/challengePage" component={ChallengePage}/> 
-
               <Route path="/product-detail" component={product}/>
               <Route path="/accueil" component={Accueil}/> 
               <Route path="/shop" component={all}/> 
