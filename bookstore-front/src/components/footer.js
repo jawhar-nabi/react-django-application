@@ -19,6 +19,10 @@ export class Footer extends Component{
         <footer className="site-footer">
           <div className="container">
             <div className="row justify-content-between  section-padding">
+
+
+
+            {/*contact */}
               <div className=" col-xl-3 col-lg-4 col-sm-6">
                 <div className="single-footer pb--40">
                   <div className="brand-footer footer-title">
@@ -32,6 +36,12 @@ export class Footer extends Component{
                   </div>
                 </div>
               </div>
+
+
+
+
+
+              {/*information */}
               <div className=" col-xl-3 col-lg-2 col-sm-6">
                 <div className="single-footer pb--40">
                   <div className="footer-title">
@@ -46,6 +56,9 @@ export class Footer extends Component{
                   </ul>
                 </div>
               </div>
+
+
+              {/*extras */}
               <div className=" col-xl-3 col-lg-2 col-sm-6">
                 <div className="single-footer pb--40">
                   <div className="footer-title">
@@ -60,6 +73,10 @@ export class Footer extends Component{
                   </ul>
                 </div>
               </div>
+
+
+
+              {/*Newsletter Subscribe & stay connect */}
               <div className=" col-xl-3 col-lg-4 col-sm-6">
                 <div className="footer-title">
                   <h3>Newsletter Subscribe</h3>
@@ -81,8 +98,15 @@ export class Footer extends Component{
                   </ul>
                 </div>
               </div>
+
+
             </div>
           </div>
+
+
+
+
+         {/* partie en gris */}
           <div className="footer-bottom">
             <div className="container">
               <p className="copyright-heading">Suspendisse in auctor augue. Cras fermentum est ac fermentum tempor. Etiam
@@ -90,7 +114,7 @@ export class Footer extends Component{
               <a href="#" className="payment-block">
                 <img src="image/icon/payment.png" alt="" />
               </a>
-              <p className="copyright-text">Copyright © 2019 <a href="#" className="author">Pustok</a>. All Right Reserved.
+              <p className="copyright-text">Copyright © 2020 <a href="#" className="author">Pustok</a>. All Right Reserved.
                 <br />
                 Design By Pustok</p>
             </div>

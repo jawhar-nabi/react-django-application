@@ -19,50 +19,154 @@ export class News extends Component{
             <div className="container">
               <div className="row align-items-lg-center">
                 <div className="col-12">
+                <div className="single-slide bg-image" data-bg="image/news/cov.jpg">
+
                   <div className="sb-slick-slider" data-slick-setting="{
                                                                 &quot;autoplay&quot;: true,
                                                                 &quot;autoplaySpeed&quot;: 8000,
                                                                 &quot;slidesToShow&quot;: 1,
                                                                 &quot;dots&quot;:true
                                                                 }">
-                    <div className="single-slide bg-image" data-bg="image/bg-images/home-2-slider-2.jpg">
+
+
+
+
+
+
+
+{/* boucle nbr fini expl 7 foix max  a chaq fois : l partie de single slide,  info BD */}
+
+
+
+
+
+
+{/* single slide*/}
+<div className="single-slide bg-image" >
                       <div className="home-content pl--30">
                         <div className="container">
-                          <div className="col-lg-7">
+                          <div className="row">
+                          <div className="col-lg-1"></div>
+                          <div className="col-lg-6">
+                          <h2 className="h2-v2">Book name</h2>
+
                             <span className="title-mid">category livre</span>
-                            <h2 className="h2-v2">Book name</h2>
                             <p>Descreption********************************************
                               <br /></p>
-                            <a href="shop-grid.html" className="btn btn-outlined--primary">
+                            <a href="/detailBook" className="btn btn-outlined--primary">
                               Consulter
                             </a>
                           </div>
-                          <div className="col-lg-7">
-                            <img src="image/a.png" alt="" />
+                          <div className="col-lg-1"></div>
+
+                          <div className="col-lg-2">
+                            <img src="image/news/p1.jpg" alt="" />
+                          </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div className="single-slide bg-image" data-bg="image/bg-images/home-2-slider-1.jpg">
+{/*end */}
+
+
+
+
+{/* single slide*/}
+<div className="single-slide bg-image" >
                       <div className="home-content pl--30">
-                        <div className="row">
-                          <div className="col-lg-7">
+                        <div className="container">
+                          <div className="row">
+                          <div className="col-lg-1"></div>
+                          <div className="col-lg-6">
+                          <h2 className="h2-v2">Book name</h2>
+
                             <span className="title-mid">category livre</span>
-                            <h2 className="h2-v2">Book name</h2>
                             <p>Descreption********************************************
                               <br /></p>
-                            <a href="shop-grid.html" className="btn btn-outlined--primary">
+                            <a href="/detailBook" className="btn btn-outlined--primary">
                               Consulter
                             </a>
                           </div>
-                          <div className="col-lg-7">
-                            <img src="image/a.png" alt="" />
+                          <div className="col-lg-1"></div>
+
+                          <div className="col-lg-2">
+                            <img src="image/news/p2.jpg" alt="" />
+                          </div>
                           </div>
                         </div>
                       </div>
                     </div>
+{/*end */}
+
+
+
+{/* single slide*/}
+<div className="single-slide bg-image" >
+                      <div className="home-content pl--30">
+                        <div className="container">
+                          <div className="row">
+                          <div className="col-lg-1"></div>
+                          <div className="col-lg-6">
+                          <h2 className="h2-v2">Book name</h2>
+
+                            <span className="title-mid">category livre</span>
+                            <p>Descreption********************************************
+                              <br /></p>
+                            <a href="/detailBook" className="btn btn-outlined--primary">
+                              Consulter
+                            </a>
+                          </div>
+                          <div className="col-lg-1"></div>
+
+                          <div className="col-lg-2">
+                            <img src="image/news/p3.jpg" alt="" />
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+{/*end */}
+
+{/* single slide*/}
+<div className="single-slide bg-image" >
+                      <div className="home-content pl--30">
+                        <div className="container">
+                          <div className="row">
+                          <div className="col-lg-1"></div>
+                          <div className="col-lg-6">
+                          <h2 className="h2-v2">Book name</h2>
+
+                            <span className="title-mid">category livre</span>
+                            <p>Descreption********************************************
+                              <br /></p>
+                            <a href="/detailBook" className="btn btn-outlined--primary">
+                              Consulter
+                            </a>
+                          </div>
+                          <div className="col-lg-1"></div>
+
+                          <div className="col-lg-2">
+                            <img src="image/news/p4.jpg" alt="" />
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+{/*end */}
+
+
+
+
+
+
+
+
+
+
+
                   </div>
-                </div>
+                  </div>
+                  </div>
               </div>
             </div>
           </section>

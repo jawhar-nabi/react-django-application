@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-export class test extends Component{
+export class Test extends Component{
     render(){
         return(
             <div>
@@ -13,3 +13,5 @@ export class test extends Component{
         )
     }
 }
+
+export default Test;

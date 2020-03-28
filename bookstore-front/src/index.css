@@ -15265,11 +15265,16 @@ input[type="number"] {
     color: #fff; }
 
 /*>>>>>>>> Images <<<<<<<<<*/
-.bg-image {
+.challenge-image {
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  z-index: 1; }
+ }
+  
+  .bg-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1; }
 
 .border-bottom {
   border-bottom: 1px solid #ebebeb; }
@@ -15749,7 +15754,7 @@ input[type="number"] {
 .price {
   color: #929292;
   font-size: 18px;
-  color: #62ab00;
+  color: #0f0329;
   font-weight: 600; }
   @media (min-width: 576px) {
     .price {

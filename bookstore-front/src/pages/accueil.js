@@ -12,6 +12,9 @@ import {Gallery} from '../components/gallery';
 import {BarCategory} from '../components/barCategory';
 import {News} from '../components/news';
 import {Top20} from '../components/top20';
+import {Cover} from '../components/cover';
+import {ChallengeAccueil} from '../components/challengeAccueil';
+import {BlocMotivation} from '../components/blocMotivation';
 
 
 
@@ -19,22 +22,66 @@ import {Top20} from '../components/top20';
 
 export class Accueil extends  React.Component{
     render(){
+
+{/*    + addBook +ads      + userBooks/>*/}   
+
+
+
       return (
     <React.Fragment>
       <div className="container">
         <Router>
-          <h1> New BOOKS</h1>
-          {<News/>}      <br /><br /><br /><br />
-          {<Top20/>}
-          <h1> Books Category : </h1>      <br /><br /><br /><br />
-          {<Gallery/>}
-          {<BarCategory/>}
-          {<Ads/>}
+        {<Cover/>}
+        {<Gallery/>}  
+
+
+        <div className="row"> 
+          <div className="col-sm-3">{<ChallengeAccueil/>}</div>
+          <div className="col-sm-9">{<BarCategory/>}</div> {/* livres recommandés */}
+        </div>  
+
+         
+        {<News/>}  
+
+        
+
+        <br/><br/><br/><br/>
+  {<BarCategory/>}  {/*TOP20 */} 
+
+
+
+
+
+
+
+
+        <div className="row"> 
+          <div className="col-sm-3">{<AddBook/>}</div>
+          <div className="col-sm-9">{<Ads/>}</div> 
+        </div>
+         
+         
+         
+         
+
+         
       
-          <div className="row"> 
-              <div className="col-sm-4">{<Challenge/>}</div>
-              <div className="col-sm-8">{<UserBooks/>}</div> 
-          </div> 
+        <div className="row"> 
+          <div className="col-sm-3">{<BlocMotivation/>}</div>
+          <div className="col-sm-9">{<UserBooks/>}</div> 
+
+        </div> 
+
+
+
+
+
+
+
+
+
+
+
           {<AvisClients/>}
          </Router>
       </div>

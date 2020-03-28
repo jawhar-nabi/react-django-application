@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
+import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {Link}  from 'react-router-dom';
+
 export class Navbar extends Component{
+  
+
     render(){
         return(
+         
 
       <div>
         <meta charSet="utf-8" />
@@ -17,28 +23,17 @@ export class Navbar extends Component{
             <div className="header-middle pt--10 pb--10">
               <div className="container">
                 <div className="row align-items-center">
-                  <div className="col-lg-1">
-                    <a href="index.html" className="site-brand">
-                      <img src="image/logo.png" alt="" />
-                    </a>
+                  <div className="col-lg-2">
+                  <Link to="/"><img src="image/logo.png" alt="" /></Link>
+
                   </div>
-                  <div className="col-lg-6">
-                    <div className="header-search-block">
-                      <input type="text" placeholder="Search entire store here" />
-                      <button>Search</button>
-                    </div>
-                  </div>
-                  <div className="col-lg-5">
-                    <div className="main-navigation flex-lg-right">
-                      <div className="cart-widget">
-                        <div className="login-block">
-                          <a href="login-register.html" className="font-weight-bold"><h3>Login</h3></a> <br />
-                          <span> <b> <h3>or</h3></b></span><a href="login-register.html"><b> <h3>Register</h3></b> </a>
-                        </div>
-                     
-                      </div>
-                      {/* @include('menu.htm') */}
-                    </div>
+
+                   <div className="col-lg-8"> </div>
+                
+                  <div className="col-lg-2">
+                    <Link to="/login"><img src="image/identifiez-vous.png" alt="" /></Link>
+
+                   
                   </div>
                 </div>
               </div>
@@ -46,11 +41,11 @@ export class Navbar extends Component{
             <div className="header-bottom bg-primary">
               <div className="container">
                 <div className="row align-items-center">
-                  <div className="col-lg-3">
+                  <div className="col-lg-4">
                     <nav className="category-nav white-nav  ">
                       <div>
                         <a href="javascript:void(0)" className="category-trigger"><i className="fa fa-bars" />Book
-                          categories</a>
+                          Categories</a>
                         <ul className="category-menu">
                           <li className="cat-item has-children">
                             <a href="#">Arts &amp; Photography</a>
@@ -156,30 +151,20 @@ export class Navbar extends Component{
                       </div>
                     </nav>
                   </div>
-                  <div className="col-lg-3">
-                    <div className="header-phone color-white">
-                      <div className="icon">
-                        <i className="fas fa-headphones-alt" />
-                      </div>
-                      
-                    </div>
-                  </div>
-                  <div className="col-lg-6">
+
+
+
+                  
+                  <div className="col-lg-8">
                     <div className="main-navigation flex-lg-right">
                       <ul className="main-menu menu-right main-menu--white li-last-0">
                         <li className="menu-item has-children">
-                          <a href="javascript:void(0)">Home <i className="fas fa-chevron-down dropdown-arrow" /></a>
-                          <ul className="sub-menu">
-                            <li> <a href="index.html">Home One</a></li>
-                            <li> <a href="index-2.html">Home Two</a></li>
-                            <li> <a href="index-3.html">Home Three</a></li>
-                            <li> <a href="index-4.html">Home Four</a></li>
-                            <li> <a href="index-5.html">Home Five</a></li>
-                          </ul>
+                        <Link to="/">Accueil</Link>
                         </li>
+
                         {/* Shop */}
                         <li className="menu-item has-children mega-menu">
-                          <a href="javascript:void(0)">shop <i className="fas fa-chevron-down dropdown-arrow" /></a>
+                            <Link to="/profil">Profil</Link>
                           <ul className="sub-menu four-column">
                             <li className="cus-col-25">
                               <h3 className="menu-title"><a href="javascript:void(0)">Shop Grid </a></h3>
@@ -228,7 +213,7 @@ export class Navbar extends Component{
                         </li>
                         {/* Pages */}
                         <li className="menu-item has-children">
-                          <a href="javascript:void(0)">Pages <i className="fas fa-chevron-down dropdown-arrow" /></a>
+                          <Link to="/myBooks">Mes Livres</Link>
                           <ul className="sub-menu">
                             <li><a href="cart.html">Cart</a></li>
                             <li><a href="checkout.html">Checkout</a></li>
@@ -243,7 +228,7 @@ export class Navbar extends Component{
                         </li>
                         {/* Blog */}
                         <li className="menu-item has-children mega-menu">
-                          <a href="javascript:void(0)">Blog <i className="fas fa-chevron-down dropdown-arrow" /></a>
+                        <Link to="/forum">Forum</Link>
                           <ul className="sub-menu three-column">
                             <li className="cus-col-33">
                               <h3 className="menu-title"><a href="javascript:void(0)">Blog Grid</a></h3>
@@ -275,7 +260,7 @@ export class Navbar extends Component{
                           </ul>
                         </li>
                         <li className="menu-item">
-                          <a href="contact.html">Contact</a>
+                        <Link to="/contact">Contact</Link>
                         </li>
                       </ul>
                     </div>
@@ -419,36 +404,32 @@ export class Navbar extends Component{
               </div>
             </header>
             {/*Off Canvas Navigation Start*/}
+
+
+
+
+
+
+
+
+
+
             <aside className="off-canvas-wrapper">
               <div className="btn-close-off-canvas">
                 <i className="ion-android-close" />
               </div>
               <div className="off-canvas-inner">
-                {/* search box start */}
-                <div className="search-box offcanvas">
-                  <form>
-                    <input type="text" placeholder="Search Here" />
-                    <button className="search-btn"><i className="ion-ios-search-strong" /></button>
-                  </form>
-                </div>
-                {/* search box end */}
                 {/* mobile menu start */}
                 <div className="mobile-navigation">
                   {/* mobile menu navigation start */}
                   <nav className="off-canvas-nav">
                     <ul className="mobile-menu main-mobile-menu">
                       <li className="menu-item-has-children">
-                        <a href="#">Home</a>
-                        <ul className="sub-menu">
-                          <li> <a href="index.html">Home One</a></li>
-                          <li> <a href="index-2.html">Home Two</a></li>
-                          <li> <a href="index-3.html">Home Three</a></li>
-                          <li> <a href="index-4.html">Home Four</a></li>
-                          <li> <a href="index-5.html">Home Five</a></li>
-                        </ul>
+                      <Link to="/">Accueil</Link>
+                        
                       </li>
                       <li className="menu-item-has-children">
-                        <a href="#">Blog</a>
+                      <Link to="/profil">Profil</Link>
                         <ul className="sub-menu">
                           <li className="menu-item-has-children">
                             <a href="#">Blog Grid</a>
@@ -479,7 +460,7 @@ export class Navbar extends Component{
                         </ul>
                       </li>
                       <li className="menu-item-has-children">
-                        <a href="#">Shop</a>
+                      <Link to="/myBooks">Mes Livres</Link>
                         <ul className="sub-menu">
                           <li className="menu-item-has-children">
                             <a href="#">Shop Grid</a>
@@ -522,7 +503,7 @@ export class Navbar extends Component{
                         </ul>
                       </li>
                       <li className="menu-item-has-children">
-                        <a href="#">Pages</a>
+                      <Link to="/forum">Forum</Link>
                         <ul className="sub-menu">
                           <li><a href="cart.html">Cart</a></li>
                           <li><a href="checkout.html">Checkout</a></li>
@@ -535,81 +516,38 @@ export class Navbar extends Component{
                           <li><a href="contact-2.html">contact 02</a></li>
                         </ul>
                       </li>
-                      <li><a href="contact.html">Contact</a></li>
+                      <Link to="/contact">Contact</Link>
                     </ul>
                   </nav>
                   {/* mobile menu navigation end */}
                 </div>
                 {/* mobile menu end */}
-                <nav className="off-canvas-nav">
-                  <ul className="mobile-menu menu-block-2">
-                    <li className="menu-item-has-children">
-                      <a href="#">Currency - USD $ <i className="fas fa-angle-down" /></a>
-                      <ul className="sub-menu">
-                        <li> <a href="cart.html">USD $</a></li>
-                        <li> <a href="checkout.html">EUR €</a></li>
-                      </ul>
-                    </li>
-                    <li className="menu-item-has-children">
-                      <a href="#">Lang - Eng<i className="fas fa-angle-down" /></a>
-                      <ul className="sub-menu">
-                        <li>Eng</li>
-                        <li>Ban</li>
-                      </ul>
-                    </li>
-                    <li className="menu-item-has-children">
-                      <a href="#">My Account <i className="fas fa-angle-down" /></a>
-                      <ul className="sub-menu">
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">Order History</a></li>
-                        <li><a href="#">Transactions</a></li>
-                        <li><a href="#">Downloads</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </nav>
-                <div className="off-canvas-bottom">
-                  <div className="contact-list mb--10">
-                    <a href="#" className="sin-contact"><i className="fas fa-mobile-alt" />(12345) 78790220</a>
-                    <a href="#" className="sin-contact"><i className="fas fa-envelope" />examle@handart.com</a>
-                  </div>
-                  <div className="off-canvas-social">
-                    <a href="#" className="single-icon"><i className="fab fa-facebook-f" /></a>
-                    <a href="#" className="single-icon"><i className="fab fa-twitter" /></a>
-                    <a href="#" className="single-icon"><i className="fas fa-rss" /></a>
-                    <a href="#" className="single-icon"><i className="fab fa-youtube" /></a>
-                    <a href="#" className="single-icon"><i className="fab fa-google-plus-g" /></a>
-                    <a href="#" className="single-icon"><i className="fab fa-instagram" /></a>
-                  </div>
-                </div>
               </div>
             </aside>
-            {/*Off Canvas Navigation End*/}
           </div>
+
+
+
+
+
+{/*partie nav mobile*/ }
           <div className="sticky-init fixed-header common-sticky">
             <div className="container d-none d-lg-block">
               <div className="row align-items-center">
-                <div className="col-lg-4">
-                  <a href="index.html" className="site-brand">
-                    <img src="image/logo.png" alt="" />
-                  </a>
+                <div className="col-lg-2">
+                  <Link to="/"  className="site-brand" > <img src="image/logo.png" alt="" /></Link>
                 </div>
                 <div className="col-lg-8">
                   <div className="main-navigation flex-lg-right">
                     <ul className="main-menu menu-right ">
                       <li className="menu-item has-children">
-                        <a href="javascript:void(0)">Home <i className="fas fa-chevron-down dropdown-arrow" /></a>
-                        <ul className="sub-menu">
-                          <li> <a href="index.html">Home One</a></li>
-                          <li> <a href="index-2.html">Home Two</a></li>
-                          <li> <a href="index-3.html">Home Three</a></li>
-                          <li> <a href="index-4.html">Home Four</a></li>
-                          <li> <a href="index-5.html">Home Five</a></li>
-                        </ul>
+                      <Link to="/">Accueil</Link>
+                       
                       </li>
                       {/* Shop */}
                       <li className="menu-item has-children mega-menu">
-                        <a href="javascript:void(0)">shop <i className="fas fa-chevron-down dropdown-arrow" /></a>
+                      <Link to="/profil"  >Profil</Link>
+
                         <ul className="sub-menu four-column">
                           <li className="cus-col-25">
                             <h3 className="menu-title"><a href="javascript:void(0)">Shop Grid </a></h3>
@@ -655,7 +593,7 @@ export class Navbar extends Component{
                       </li>
                       {/* Pages */}
                       <li className="menu-item has-children">
-                        <a href="javascript:void(0)">Pages <i className="fas fa-chevron-down dropdown-arrow" /></a>
+                      <Link to="/myBooks"  >Mes Livres</Link>
                         <ul className="sub-menu">
                           <li><a href="cart.html">Cart</a></li>
                           <li><a href="checkout.html">Checkout</a></li>
@@ -670,7 +608,7 @@ export class Navbar extends Component{
                       </li>
                       {/* Blog */}
                       <li className="menu-item has-children mega-menu">
-                        <a href="javascript:void(0)">Blog <i className="fas fa-chevron-down dropdown-arrow" /></a>
+                      <Link to="/forum"  >Forum</Link>
                         <ul className="sub-menu three-column">
                           <li className="cus-col-33">
                             <h3 className="menu-title"><a href="javascript:void(0)">Blog Grid</a></h3>
@@ -701,7 +639,7 @@ export class Navbar extends Component{
                         </ul>
                       </li>
                       <li className="menu-item">
-                        <a href="contact.html">Contact</a>
+                      <Link to="/contact"  >Contact</Link>
                       </li>
                     </ul>
                   </div>

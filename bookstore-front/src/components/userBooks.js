@@ -13,10 +13,10 @@ export class UserBooks extends Component{
         <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
         <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico" />
         <div className="site-wrapper" id="top">
-          <section className="bg-gray section-padding-top section-padding-bottom section-margin">
+          <section className=" section-padding-top section-padding-bottom section-margin">
             
               
-                  <div className="home-right-block bg-white">
+                  <div className="home-right-block">
                     <div className="sb-custom-tab   pt--30 pb--30">
                     <h1> Your BOOKS</h1>
                       <ul className="nav nav-tabs" id="myTab" role="tablist">
@@ -57,22 +57,24 @@ export class UserBooks extends Component{
                                 <div className="card-image">
                                   <img src="image/products/product-1.jpg" alt="" />
                                 </div>
+                                
                                 <div className="product-card--body">
                                   <div className="product-header">
                                     <a href="#" className="author">
-                                      Fpple
+                                      Nom auteur
                                     </a>
-                                    <h3><a href="product-details.html">5 Ways To Get Through
-                                        To Your BOOK</a></h3>
+                                    <h3><a href="/detailBook">Titre Book</a></h3>
                                   </div>
-                                  <div className="price-block">
-                                    <span className="price">£51.20</span>
-                                    <del className="price-old">£51.20</del>
-                                    <span className="price-discount">20%</span>
-                                  </div>
+                                 
                                 </div>
                               </div>
                             </div>
+
+
+
+
+
+
                             <div className="single-slide">
                               <div className="product-card card-style-list">
                                 <div className="card-image">
@@ -94,6 +96,29 @@ export class UserBooks extends Component{
                                 </div>
                               </div>
                             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                             <div className="single-slide">
                               <div className="product-card card-style-list">
                                 <div className="card-image">
@@ -388,8 +413,44 @@ export class UserBooks extends Component{
                                 </div>
                               </div>
                             </div>
+
+
+
+                            
                           </div>
                         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         <div className="tab-pane" id="men" role="tabpanel" aria-labelledby="men-tab">
                           <div className="product-slider product-list-slider multiple-row slider-border-multiple-row  sb-slick-slider" data-slick-setting="{
                                                                     &quot;autoplay&quot;: true,
