@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import {Link}  from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Search } from './search';
 
-export class Navbar extends Component{
-  
+export class Navbar extends Component {
 
-    render(){
-        return(
-         
+
+  render() {
+    return (
+
 
       <div>
         <meta charSet="utf-8" />
@@ -24,16 +25,16 @@ export class Navbar extends Component{
               <div className="container">
                 <div className="row align-items-center">
                   <div className="col-lg-2">
-                  <Link to="/"><img src="image/logo.png" alt="" /></Link>
+                    <Link to="/"><img src="image/logo.png" alt="" /></Link>
 
                   </div>
 
-                   <div className="col-lg-8"> </div>
-                
+                  <div className="col-lg-8"> </div>
+
                   <div className="col-lg-2">
                     <Link to="/login"><img src="image/identifiez-vous.png" alt="" /></Link>
 
-                   
+
                   </div>
                 </div>
               </div>
@@ -41,11 +42,11 @@ export class Navbar extends Component{
             <div className="header-bottom bg-primary">
               <div className="container">
                 <div className="row align-items-center">
-                  <div className="col-lg-4">
+                  <div className="col-lg-3">
                     <nav className="category-nav white-nav  ">
                       <div>
-                        <a href="javascript:void(0)" className="category-trigger"><i className="fa fa-bars" />Book
-                          Categories</a>
+                        <a href="javascript:void(0)" className="category-trigger"><i className="fa fa-bars" /> Book
+                          Categories </a>
                         <ul className="category-menu">
                           <li className="cat-item has-children">
                             <a href="#">Arts &amp; Photography</a>
@@ -151,20 +152,28 @@ export class Navbar extends Component{
                       </div>
                     </nav>
                   </div>
+                  <div className="col-lg-3">
+                    <nav className="category-nav white-nav  ">
+                    <Search/>
+                    </nav>
+                  </div>
 
 
-
-                  
-                  <div className="col-lg-8">
+                  <div className="col-lg-6">
                     <div className="main-navigation flex-lg-right">
                       <ul className="main-menu menu-right main-menu--white li-last-0">
-                        <li className="menu-item has-children">
-                        <Link to="/">Accueil</Link>
+                        {/* <li className="menu-item ">
+                        <Link to="/"><Search/></Link>
+
+                        </li> */}
+
+                        <li className="menu-item">
+                          <Link to="/">Accueil</Link>
                         </li>
 
                         {/* Shop */}
                         <li className="menu-item has-children mega-menu">
-                            <Link to="/profil">Profil</Link>
+                          <Link to="/profil">Profil</Link>
                           <ul className="sub-menu four-column">
                             <li className="cus-col-25">
                               <h3 className="menu-title"><a href="javascript:void(0)">Shop Grid </a></h3>
@@ -213,7 +222,7 @@ export class Navbar extends Component{
                         </li>
                         {/* Pages */}
                         <li className="menu-item has-children">
-                          <Link to="/myBooks">Mes Livres</Link>
+                          <Link to="/myBooks">Livres</Link>
                           <ul className="sub-menu">
                             <li><a href="cart.html">Cart</a></li>
                             <li><a href="checkout.html">Checkout</a></li>
@@ -228,7 +237,7 @@ export class Navbar extends Component{
                         </li>
                         {/* Blog */}
                         <li className="menu-item has-children mega-menu">
-                        <Link to="/forum">Forum</Link>
+                          <Link to="/forum">Forum</Link>
                           <ul className="sub-menu three-column">
                             <li className="cus-col-33">
                               <h3 className="menu-title"><a href="javascript:void(0)">Blog Grid</a></h3>
@@ -260,7 +269,7 @@ export class Navbar extends Component{
                           </ul>
                         </li>
                         <li className="menu-item">
-                        <Link to="/contact">Contact</Link>
+                          <Link to="/contact">Contact</Link>
                         </li>
                       </ul>
                     </div>
@@ -425,11 +434,11 @@ export class Navbar extends Component{
                   <nav className="off-canvas-nav">
                     <ul className="mobile-menu main-mobile-menu">
                       <li className="menu-item-has-children">
-                      <Link to="/">Accueil</Link>
-                        
+                        <Link to="/">Accueil</Link>
+
                       </li>
                       <li className="menu-item-has-children">
-                      <Link to="/profil">Profil</Link>
+                        <Link to="/profil">Profil</Link>
                         <ul className="sub-menu">
                           <li className="menu-item-has-children">
                             <a href="#">Blog Grid</a>
@@ -460,7 +469,7 @@ export class Navbar extends Component{
                         </ul>
                       </li>
                       <li className="menu-item-has-children">
-                      <Link to="/myBooks">Mes Livres</Link>
+                        <Link to="/myBooks"> Livres</Link>
                         <ul className="sub-menu">
                           <li className="menu-item-has-children">
                             <a href="#">Shop Grid</a>
@@ -503,7 +512,7 @@ export class Navbar extends Component{
                         </ul>
                       </li>
                       <li className="menu-item-has-children">
-                      <Link to="/forum">Forum</Link>
+                        <Link to="/forum">Forum</Link>
                         <ul className="sub-menu">
                           <li><a href="cart.html">Cart</a></li>
                           <li><a href="checkout.html">Checkout</a></li>
@@ -530,23 +539,23 @@ export class Navbar extends Component{
 
 
 
-{/*partie nav mobile*/ }
+          {/*partie nav mobile*/}
           <div className="sticky-init fixed-header common-sticky">
             <div className="container d-none d-lg-block">
               <div className="row align-items-center">
                 <div className="col-lg-2">
-                  <Link to="/"  className="site-brand" > <img src="image/logo.png" alt="" /></Link>
+                  <Link to="/" className="site-brand" > <img src="image/logo.png" alt="" /></Link>
                 </div>
                 <div className="col-lg-8">
                   <div className="main-navigation flex-lg-right">
                     <ul className="main-menu menu-right ">
                       <li className="menu-item has-children">
-                      <Link to="/">Accueil</Link>
-                       
+                        <Link to="/">Accueil</Link>
+
                       </li>
                       {/* Shop */}
                       <li className="menu-item has-children mega-menu">
-                      <Link to="/profil"  >Profil</Link>
+                        <Link to="/profil"  >Profil</Link>
 
                         <ul className="sub-menu four-column">
                           <li className="cus-col-25">
@@ -593,7 +602,7 @@ export class Navbar extends Component{
                       </li>
                       {/* Pages */}
                       <li className="menu-item has-children">
-                      <Link to="/myBooks"  >Mes Livres</Link>
+                        <Link to="/myBooks"  > Livres</Link>
                         <ul className="sub-menu">
                           <li><a href="cart.html">Cart</a></li>
                           <li><a href="checkout.html">Checkout</a></li>
@@ -608,7 +617,7 @@ export class Navbar extends Component{
                       </li>
                       {/* Blog */}
                       <li className="menu-item has-children mega-menu">
-                      <Link to="/forum"  >Forum</Link>
+                        <Link to="/forum"  >Forum</Link>
                         <ul className="sub-menu three-column">
                           <li className="cus-col-33">
                             <h3 className="menu-title"><a href="javascript:void(0)">Blog Grid</a></h3>
@@ -639,7 +648,7 @@ export class Navbar extends Component{
                         </ul>
                       </li>
                       <li className="menu-item">
-                      <Link to="/contact"  >Contact</Link>
+                        <Link to="/contact"  >Contact</Link>
                       </li>
                     </ul>
                   </div>
@@ -650,6 +659,7 @@ export class Navbar extends Component{
           {/* Use Minified Plugins Version For Fast Page Load */}
           {/* Mirrored from demo.hasthemes.com/pustok-preview/pustok/shop-grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 08 Mar 2020 14:27:41 GMT */}
         </div></div>
+
     );
   }
 }
