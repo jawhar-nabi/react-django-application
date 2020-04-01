@@ -18,6 +18,10 @@ import {ListeBooks} from './pages/listeBooks';
 import {DetailBook} from './pages/detailBook';
 import {ChallengePage} from './pages/challengePage';
 import {product} from './components/product-detail';
+<<<<<<< HEAD
+=======
+
+>>>>>>> a4c30bd8e014d383e63ed3a1af49ec232a5436b0
 
 
 
@@ -48,8 +52,11 @@ class App extends Component {
               <Route path="/listeBooks" component={ListeBooks}/> 
               <Route path="/detailBook" component={DetailBook}/> 
               <Route path="/challengePage" component={ChallengePage}/> 
+<<<<<<< HEAD
 
               {/* <Route  path="/login" component={LoginForm}/> */}
+=======
+>>>>>>> a4c30bd8e014d383e63ed3a1af49ec232a5436b0
               <Route path="/product-detail" component={product}/>
               <Route path="/accueil" component={Accueil}/> 
               <Route path="/shop" component={all}/> 
