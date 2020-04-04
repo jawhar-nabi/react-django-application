@@ -1,0 +1,27 @@
+contains all the api for our pages 
+
+
+CRUD:create retrieve update delete 
+
+Serializer => change the model to JSon 
+           => Validate the requests .
+
+
+#generic_views 
+
+
+Django generic views are just view functions (regular old python functions) that do things that are very common in web applications.
+
+Depending on the type of app you are building, they can save you from writing a lot of very simple views.
+
+
+
+# Path && Url 
+path() always matches the complete path, so path('account/login/') is equivalent to url('^account/login/$').
+
+
+#####
+In Python, r'^$'  is a regular expression that matches an empty line.
+This looks like a regular expression (regex) commonly used in Django URL configurations.
+
+The 'r' in front tells Python the expression is a raw string. In a raw string, escape sequences are not parsed. For example, '\n' is a single newline character. But, r'\n' would be two characters: a backslash and an 'n'.
