@@ -14,8 +14,9 @@
 .all{
     width: 80%;
     position: relative;
-    margin: 10px 30%;
+    margin: 10px 2%;
     color: #62ab00 ;
+    display: inline;
 }
 .contact{
     border:2px solid brown;
@@ -27,4 +28,13 @@
 }
 .a{
     width: 80%;
+}
+.pimg{
+    border-radius: 50%;
+    height: 30%;
+    width: 30%;
+}
+.rect{
+    padding-left: 30%;
+    border: 2px solid gray;
 }

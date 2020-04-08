@@ -5,8 +5,12 @@ import { Search } from './search';
 
 export class Navbar extends Component {
 
+  state = {
+    user: null,
+  }
 
   render() {
+    const {user} = this.state;
     return (
 
 
@@ -26,16 +30,17 @@ export class Navbar extends Component {
                 <div className="row align-items-center">
                   <div className="col-lg-2">
                     <Link to="/"><img src="image/logo.png" alt="" /></Link>
-
                   </div>
-
                   <div className="col-lg-8"> </div>
-
+                  {this.state.user ? 
                   <div className="col-lg-2">
-                    <Link to="/login"><img src="image/identifiez-vous.png" alt="" /></Link>
-
-
+                  <h6> {user.name}</h6>
                   </div>
+                  :
+                    <div className="col-lg-2">
+                      <Link to="/login"><img src="image/identifiez-vous.png" alt="" /></Link>
+                    </div>
+                  }
                 </div>
               </div>
             </div>
@@ -154,7 +159,7 @@ export class Navbar extends Component {
                   </div>
                   <div className="col-lg-3">
                     <nav className="category-nav white-nav  ">
-                    <Search/>
+                      <Search />
                     </nav>
                   </div>
 

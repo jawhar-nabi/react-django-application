@@ -1,6 +1,7 @@
 
 
 import React, { Component } from 'react';
+import { Shop } from '../components/shop-grid';
 export class ListeBooks extends Component{
 
 
@@ -27,7 +28,7 @@ export class ListeBooks extends Component{
 
 
 
-            
+            <Shop/>
             </div>
         )
     }
