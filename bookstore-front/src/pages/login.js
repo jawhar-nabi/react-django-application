@@ -1,67 +1,66 @@
 import React from 'react'
 import { Button, Form, Grid, Header,  Message, Segment } from 'semantic-ui-react';
 import { Redirect } from 'react-router-dom'
-
-
+import { connect } from 'react-redux';
+import {PropTypes} from 'prop-types';
+import { login ,register} from '../actions/auth';
+import { createMessage } from '../actions/messages';
 
 export class Login extends React.Component {
-  state = { email:'', password: '',    redirect: false
+ 
+  state = {  
+        first_name: '',
+        last_name:'',
+        email:'',
+        password: '',
+        password2: '',
+
  };
 
-// setRedirect = () => {
-//   this.setState({
-//     redirect: true
-//   })
-// }
-// renderRedirect = () => {
-//   if (this.state.redirect) {
-//     console.log('render redirect true...')
-//     return <Redirect to='/' />
-//   }
-// }
+static propTypes = {
+  //login: PropTypes.func.isRequired,
+  //register: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
+};
+//=============================================change/submit login ====================================================================
 
-//   handleChange = (e, { name, value }) => this.setState({ [name]: value })
-handleChange =() =>{}
-handleSubmit = ()=>{}
-//   handleSubmit = () => {
-//     let {email, password } = this.state;
-//     let req={email,password};
-//     //console.log({email, password });
-//     //this.props.history.push('/');
-//     axios.post('http://localhost:3000/api/users/signin',req)
-//       .then(res =>{
-//         if(res.data === "user not found"){
-//         alert("user not found");
-//         //this.props.history.push('/')
-//       }
-//         else if(res.data ==="Wrong password."){
-//           alert("mdp incorect");
-//         }else {
+handleChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
-//         // save token in localstorage
-//         localStorage.setItem('token', JSON.stringify(res.data));
-//         // const user = localStorage.getItem('item');
-//         // JSON.parse(user);
-//         //this.props.history.push('/');
+handleSubmit = (e) => {
+  e.preventDefault();
+  this.props.login(this.state.email, this.state.password);
+};
 
-//         window.location = '/';
-//       }
-//       }
-//       )
-//       //.catch(err => console.log(err) )
-      
-//   } 
-//   handleload = () =>{
-//     alert('page loaded successfully...');
-//     console.log('2500')
-//   }
-      //console.log(resp.data);
-    // const response = axios.get('http://localhost:3000/api/users/');
-    // console.log(response);
-    //this.setState({ submittedlastname: lastname, submittedfirstname: firstname, submittedEmail: email , submittedphone: phone})
+//onChange = (e) => this.setState({ [e.target.name]: e.target.value });
+
+//=============================================change/submit register====================================================================
+  onSubmit = (e) => {
+
+    e.preventDefault();
+    const { first_name,last_name, email, password, password2 } = this.state;
+    if (password !== password2) {
+     this.props.createMessage({ passwordNotMatch: 'Passwords do not match' });
+     console.log("Passwords do not match");
+    }
+     else {
+      const newUser = {
+        first_name,
+        last_name,
+        password,
+        email};
+      this.props.register(newUser);
+    }
+  };
+
+  onChange = (e) => this.setState({ [e.target.name]: e.target.value });
+
   
   render() {
-    const { email, password} = this.state
+    if (this.props.isAuthenticated) {
+        return <Redirect to="/" />;
+    }
+    const  {first_name,last_name, email, password, password2 } = this.state
+    
     return(
             <div>
               <div className="site-wrapper" id="top">
@@ -502,69 +501,123 @@ handleSubmit = ()=>{}
                     </div>
                   </div>
                 </section>
-                {/*=============================================
-          =            Login Register page content         =
-          =============================================*/}
+                {/*=======================================================================================================
+                                    =            Login Register page content         =
+                  =======================================================================================================*/}
                 <main className="page-section inner-page-sec-padding-bottom">
                   <div className="container">
                     <div className="row">
                       <div className="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb--30 mb-lg--0">
-                        {/* Login Form s*/}
-                        <form action="#">
+                        {/*==================================================================================================
+                                                              = Register Form =
+                        =====================================================================================================*/}
+                        <form onSubmit={this.onSubmit} >
                           <div className="login-form">
                             <h4 className="login-title">New Customer</h4>
                             <p><span className="font-weight-bold">I am a new customer</span></p>
                             <div className="row">
                               <div className="col-md-12 col-12 mb--15">
-                                <label htmlFor="email">Full Name</label>
-                                <input className="mb-0 form-control" type="text" id="name" placeholder="Enter your full name" />
+                                <label htmlFor="email">First Name</label>
+                                <input className="mb-0 form-control" 
+                                 type="text" 
+                                 id="name"
+                                 name="first_name"
+                                 placeholder="Enter your first name"
+                                 onChange={this.onChange} />
+                              </div>
+                              <div className="col-md-12 col-12 mb--15">
+                                <label htmlFor="email">Last Name</label>
+                                <input className="mb-0 form-control" 
+                                 type="text" 
+                                 name="last_name"
+                                 placeholder="Enter your last name"
+                                 onChange={this.onChange} />
                               </div>
                               <div className="col-12 mb--20">
                                 <label htmlFor="email">Email</label>
-                                <input className="mb-0 form-control" type="email" id="email" placeholder="Enter Your Email Address Here.." />
+                                <input className="mb-0 form-control"  
+                                type="email" 
+                                id="email" 
+                                name="email"
+                                placeholder="Enter Your Email Address Here.."
+                                onChange={this.onChange} />
                               </div>
                               <div className="col-lg-6 mb--20">
                                 <label htmlFor="password">Password</label>
-                                <input className="mb-0 form-control" type="password" id="password" placeholder="Enter your password" />
+                                <input className="mb-0 form-control"
+                                 type="password" 
+                                 id="password" 
+                                 name="password"
+                                 placeholder="Enter your password" 
+                                 onChange={this.onChange}/>
                               </div>
                               <div className="col-lg-6 mb--20">
                                 <label htmlFor="password">Repeat Password</label>
-                                <input className="mb-0 form-control" type="password" id="repeat-password" placeholder="Repeat your password" />
+                                <input className="mb-0 form-control" 
+                                type="password" 
+                                id="repeat-password" 
+                                name="password2"
+                                placeholder="Repeat your password" 
+                                onChange={this.onChange}/>
                               </div>
                               <div className="col-md-12">
-                                <a href="#" className="btn btn-outlined">Register</a>
+                               {/*<a href="#" className="btn btn-outlined">Register</a>*/}
+                               <button type="submit" class="btn btn-outline-secondary">Register</button>
+
                               </div>
                             </div>
                           </div>
                         </form>
                       </div>
+
+
+                      {/*=========================================================================================
+                                                     =         Login        =
+                      ============================================================================================*/}
+
                       <div className="col-sm-12 col-md-12 col-lg-6 col-xs-12">
-                        <form action="https://demo.hasthemes.com/pustok-preview/pustok/">
+                        <form onSubmit={this.handleSubmit}>
                           <div className="login-form">
                             <h4 className="login-title">Returning Customer</h4>
                             <p><span className="font-weight-bold">I am a returning customer</span></p>
                             <div className="row">
                               <div className="col-md-12 col-12 mb--15">
-                                <label htmlFor="email">Enter your email address here...</label>
-                                <input className="mb-0 form-control" type="email" id="email1" placeholder="Enter you email address here..." />
+                                           <label htmlFor="email">Enter your email address here...</label>
+                                          <input className="mb-0 form-control" 
+                                      type="email" 
+                                      id="email1" 
+                                      onChange={this.handleChange}
+                                      name="email" 
+                                      placeholder="Enter you email address here..." />
                               </div>
                               <div className="col-12 mb--20">
-                                <label htmlFor="password">Password</label>
-                                <input className="mb-0 form-control" type="password" id="login-password" placeholder="Enter your password" />
+                                            <label htmlFor="password">Password</label>
+                                            <input className="mb-0 form-control" 
+                                      type="password" 
+                                      id="login-password"
+                                      name="password" 
+                                      onChange={this.handleChange} 
+                                      placeholder="Enter your password" />
                               </div>
                               <div className="col-md-12">
-                                <a href="#" className="btn btn-outlined">Login</a>
+                               {/* <a href="#" className="btn btn-outlined" >Login</a>*/}
+                               <button type="submit" class="btn btn-outline-secondary">Login</button>
+
                               </div>
                             </div>
                           </div>
                         </form>
                       </div>
+
+
+
+
                     </div>
                   </div>
                 </main>
               </div>
               {/*=================================
-        Brands Slider
+                                                        Brands Slider
       ===================================== */}
               <section className="section-margin">
                 <h2 className="sr-only">Brand Slider</h2>
@@ -613,5 +666,9 @@ handleSubmit = ()=>{}
       
     )};
 }
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
 
-export default Login;
+//export default connect(mapStateToProps, { login ,register })(Login);
+export default connect(mapStateToProps,{login,register, createMessage })(Login);

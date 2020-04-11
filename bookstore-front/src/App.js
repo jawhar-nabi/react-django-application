@@ -2,12 +2,12 @@ import React, {Component} from 'react';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import {Navbar} from './components/navbar';
+import  Navbar from './components/navbar';
 import {Footer} from './components/footer';
 import { Accueil } from './pages/accueil';
 import { Collaborateurs} from './components/collaborateurs';
 import {Test} from './components/test';
-import {Login} from './pages/login';
+import Login from './pages/login';
 import {Profil} from './pages/profil';
 import {MyBooks} from './pages/myBooks';
 import {Forum} from './pages/forum';
@@ -18,16 +18,23 @@ import {ListeBooks} from './pages/listeBooks';
 import {DetailBook} from './pages/detailBook';
 import {ChallengePage} from './pages/challengePage';
 import {product} from './components/product-detail';
-
-
-
-
 import { all } from './pages/all-books';
+
+import { Provider } from 'react-redux';
+import store from './store';
+import { loadUser } from './actions/auth';
+
+
 
 
 class App extends Component {
+  componentDidMount() {
+    store.dispatch(loadUser());
+  }
   render() {
+  
     return (
+      <Provider store={store}>
       <React.Fragment>
         <div className="container">
           <Router>
@@ -69,6 +76,7 @@ class App extends Component {
           </Router>
         </div>
       </React.Fragment>
+      </Provider>
     );
   }
 }

@@ -2,15 +2,70 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Search } from './search';
+import axios from 'axios';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { logout } from '../actions/auth';
+
+
 
 export class Navbar extends Component {
+  static propTypes = {
+    auth: PropTypes.object.isRequired,
+    logout: PropTypes.func.isRequired,
+  };
+ /* UNSAFE_componentWillMount(){
+    let  tokenStr='9b34631242c5963bd35c46f3f1cb9987caed120c3b7fd8f354f3daf6e9af774b';
+    axios({
+      method: 'get',
+      url: 'http://127.0.0.1:8000/api/auth/user',
+      headers:{
+        // 'Access-Control-Allow-Origin': true,
+        Authorization: `Token ${tokenStr}`, 'Content-Type': 'application/json'}
+      })
+    .then(res => {
+      this.reader = res.data;
+      console.log("Good al hamdoulelah ");
+      
 
-  state = {
-    user: null,
+    }).catch(console.log("***************Token user not working**************************"));
+
   }
+  renderProfildetails(){
+  return( <Nav className="ml-auto" navbar>
+      
+  <UncontrolledDropdown setActiveFromChild>
+    <DropdownToggle tag="a" className="nav-link" caret>
+      {this.state.reader.name}
+    </DropdownToggle>
+    <DropdownMenu>
+      <DropdownItem tag="a" href="/blah" active>Link</DropdownItem>
+    </DropdownMenu>
+  </UncontrolledDropdown>
+</Nav>);
+  }*/
+
 
   render() {
-    const {user} = this.state;
+    const {isAuthenticated,user} = this.props.auth;
+
+    const userLinks = (
+      <ul className="nav justify-content-end">
+        <span className="navbar-text mr-3">
+          <strong>{user ? `Welcome ${user.first_name} ${user.last_name}` : ''}</strong>
+        </span>
+        <li className="nav-item">
+          <button onClick={this.props.logout} class="btn btn-outline-secondary">
+            Logout
+          </button>
+        </li>
+      </ul>
+    );
+
+    const authLinks = (
+      <Link to="/login"><img src="image/identifiez-vous.png" alt="" /></Link>
+
+    );
     return (
 
 
@@ -30,20 +85,37 @@ export class Navbar extends Component {
                 <div className="row align-items-center">
                   <div className="col-lg-2">
                     <Link to="/"><img src="image/logo.png" alt="" /></Link>
+
                   </div>
+
                   <div className="col-lg-8"> </div>
-                  {this.state.user ? 
+
                   <div className="col-lg-2">
-                  <h6> {user.name}</h6>
+                  {isAuthenticated ? userLinks : authLinks}
+
+     {/*this.renderProfildetails()*/}
+   
+
                   </div>
-                  :
-                    <div className="col-lg-2">
-                      <Link to="/login"><img src="image/identifiez-vous.png" alt="" /></Link>
-                    </div>
-                  }
+                
+                
                 </div>
-              </div>
-            </div>
+
+                {/*<ul className="nav justify-content-end">
+                         <li className="nav-link">
+                      <Link to="/register" className="nav-Link">Register</Link>
+                    </li> 
+                         <li className="nav-link">
+                      <Link to="/login" className="nav-Link">Login</Link>
+                    </li>
+                  </ul>  */ }
+
+
+
+     </div>
+    
+    </div>
+
             <div className="header-bottom bg-primary">
               <div className="container">
                 <div className="row align-items-center">
@@ -159,7 +231,7 @@ export class Navbar extends Component {
                   </div>
                   <div className="col-lg-3">
                     <nav className="category-nav white-nav  ">
-                      <Search />
+                    <Search/>
                     </nav>
                   </div>
 
@@ -282,6 +354,9 @@ export class Navbar extends Component {
                 </div>
               </div>
             </div>
+         
+         
+         
           </div>
           <div className="site-mobile-menu">
             <header className="mobile-header d-block d-lg-none pt--10 pb-md--10">
@@ -672,5 +747,8 @@ export class Navbar extends Component {
 
 
 
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
 
-export default Navbar;
+export default connect(mapStateToProps, { logout })(Navbar);
