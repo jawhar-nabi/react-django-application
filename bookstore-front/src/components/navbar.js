@@ -47,6 +47,7 @@ export class Navbar extends Component {
 
 
   render() {
+
     const {isAuthenticated,user} = this.props.auth;
 
     const userLinks = (
@@ -749,6 +750,7 @@ export class Navbar extends Component {
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
+  listBooks: state.listBooks,
 });
 
 export default connect(mapStateToProps, { logout })(Navbar);

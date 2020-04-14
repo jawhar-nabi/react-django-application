@@ -16,15 +16,22 @@ import { Cover } from '../components/cover';
 import { ChallengeAccueil } from '../components/challengeAccueil';
 import { BlocMotivation } from '../components/blocMotivation';
 import { research } from '../components/search';
-
+import axios from 'axios';
+import { connect } from 'react-redux';
 
 
 
 export class Accueil extends React.Component {
+
+
+
+  componentDidMount(){
+    
+  }
   render() {
 
     {/*    + addBook +ads      + userBooks/>*/ }
-
+    console.log('tofaaaat',this.props.books);
 
 
     return (
@@ -66,3 +73,10 @@ export class Accueil extends React.Component {
     )
   }
 };
+function mapStateToProps(state){
+  return {
+  books: state.listBooks
+  };
+};
+
+export default connect(mapStateToProps)(Accueil);

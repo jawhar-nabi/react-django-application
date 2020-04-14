@@ -3,7 +3,11 @@ export class Contact extends Component{
     render(){
         return(
 
-      <div>page contact</div>
+      <div>page contact
+
+
+        <a href='/crudbooks' >go to crud books</a>
+      </div>
       );
     }
   }
