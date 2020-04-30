@@ -15,7 +15,7 @@ export class AddBook extends Component{
         <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
         <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico" />
         <div>
-                    <a href="#" className="promo-image promo-overlay">
+                    <a href="" className="promo-image promo-overlay">
                       <img src="image/bg-images/add-book.png" alt="" />
                     </a>
                   </div>

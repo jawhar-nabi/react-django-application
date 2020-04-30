@@ -17,7 +17,7 @@ export class Ads extends Component{
         <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico" />
  
  <div>
-                  <a href="#" className="promo-image promo-overlay">
+                  <a href="" className="promo-image promo-overlay">
                     <img src="image/bg-images/promo-banner-with-text.jpg" alt="" />
                   </a>
                 </div>

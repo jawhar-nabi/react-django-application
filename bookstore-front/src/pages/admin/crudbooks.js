@@ -1,56 +1,72 @@
 import React, { Component } from 'react';
-import { Icon, List } from 'semantic-ui-react';
-import axios from 'axios';
+import {  Confirm, Icon, List } from 'semantic-ui-react';
 import { connect } from 'react-redux';
-import {PropTypes} from 'prop-types';
+import { PropTypes } from 'prop-types';
 
 class Crudbooks extends Component {
 
     // static propTypes = {
     //     books: PropTypes.object.isRequired,
     //   };
-    
+
     static propTypes = {
         books: PropTypes.object.isRequired,
-      };
-    
+    };
+
+    state = { open: false }
+
+    show = () => this.setState({ open: true })
+    handleConfirm = () => this.setState({ open: false })
+    handleCancel = () => this.setState({ open: false })
 
     // handleSubmit = (e) => {
     //     e.preventDefault();
     //     this.props.login(this.state.email, this.state.password);
     //   };s
 
-// handleClick() {
-//     this.props.getBooks();
-// }
+    // handleClick() {
+    //     this.props.getBooks();
+    // }
 
     render() {
 
-         const {books} = this.props.books;
-         console.log( typeof books, books);
-          return (
+        const { books } = this.props.books;
+        return (
             <React.Fragment>
                 <div>
-                    <List celled>
-                    {/* {books.map(book => ( */}
-                        <List.Item>
-                            {/* <Image avatar src='/images/avatar/small/helen.jpg' /> */}
-                            <List.Content>
-                                <List.Header>                          
-                                    {books.title}
 
-                                     <div style={{marginRight : '50px' }} align="right" >
-                                     <button style={{marginRight : '20px' }}>  <Icon name='setting' size='large' /></button> 
-                                     <button >  <Icon name='trash alternate' size='large' /></button>
-                                    </div>
-                                </List.Header>
-                                {books.content}
+                <List celled>
+                        {books.map(book => (
+                            <List.Item key={book.title}>
+                                {/* <Image avatar src='/images/avatar/small/helen.jpg' /> */}
+                                <List.Content >
+                                    <List.Header>
+                                        {book.title}
 
-                        </List.Content>
-                        </List.Item>
-                     {/* ))}   */}
+                                        <div style={{ marginRight: '50px' }} align="right" >
+                                            <button style={{ marginRight: '20px' }}>  <Icon name='setting' size='large' /></button>
+                                            <button onClick={this.show} >  <Icon name='trash alternate' size='large' /></button>
+
+
+                                        </div>
+                                        <Confirm
+                                open={this.state.open}
+                                content={book.title}
+                                cancelButton='Never mind'
+                                confirmButton="Let's do it"
+                                onCancel={this.handleCancel}
+                                onConfirm={this.handleConfirm}
+                                size='large'
+                            />
+
+                                    </List.Header>
+                                    {book.content}
+
+                                </List.Content>
+                            </List.Item>
+                            
+                        ))}
                     </List>
-
                 </div>
             </React.Fragment>
         )
@@ -59,13 +75,12 @@ class Crudbooks extends Component {
 // const mapStateToProps = (state) => ({
 //     initbook: state,
 //   });
-function mapStateToProps(state){
+function mapStateToProps(state) {
     return {
-    books: state.listBooks
+        books: state.listBooks
     };
-  };
-  
-export default connect(mapStateToProps)(Crudbooks);
-    
+};
 
-  
+export default connect(mapStateToProps)(Crudbooks);
+
+

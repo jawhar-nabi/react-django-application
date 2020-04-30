@@ -2,8 +2,14 @@ import React from 'react';
 import '../css/account.css';
 import { Card, Icon, Image, Grid } from 'semantic-ui-react';
 import Amazon from '../images/collaborateurs/amazon.jpg';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-export class Profil extends React.Component {
+class Profil extends React.Component {
+    static propTypes = {
+        auth: PropTypes.object.isRequired,
+      };
+    
     // state = {user:'', sujets:[]}
     // componentDidMount(){
     //     // let {sujet, profil}= this.state;
@@ -21,11 +27,11 @@ export class Profil extends React.Component {
     // }
 
     render() {
-        //   const { user, sujets } = this.state;
+           const {isAuthenticated, user } = this.props.auth;
 
         return (
             <div className='all'>
-                                  <h1 className='profil'><b>flen ben foulen profile</b></h1><hr />
+                                  <h1 className='profil'><b> {user.first_name} {user.last_name}</b></h1><hr />
 
                   <Grid relaxed >
 
@@ -37,9 +43,9 @@ export class Profil extends React.Component {
                     <Image className='cardimg' src={Amazon} wrapped ui={false} />
                     <Card.Content>
                         <Card.Header><br /></Card.Header>
-                        <div className='namediv'><h4 className='namediv'>name : </h4><h3 className='namediv'>foulen ben foulen</h3></div> <br />
-                        <div className='namediv'><h4 className='namediv'>email : </h4><h3 className='namediv'>foulen@gmail.com</h3></div> <br />
-                        <div className='namediv'><h4 className='namediv'>Phone : </h4><h3 className='namediv'>50006006</h3></div>
+                        <div className='namediv'><h4 className='namediv'>Nom : </h4><h3 className='namediv'>{user.first_name} {user.last_name}</h3></div> <br />
+                        <div className='namediv'><h4 className='namediv'>Email : </h4><h3 className='namediv'>{user.email}</h3></div> <br />
+                        <div className='namediv'><h4 className='namediv'>Membre depuis : </h4><h3 className='namediv'>{user.date_joined}</h3></div>
 
                     </Card.Content>
                 </Card>
@@ -99,3 +105,10 @@ export class Profil extends React.Component {
         )
     }
 }
+
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+  });
+
+
+export default connect(mapStateToProps)(Profil);

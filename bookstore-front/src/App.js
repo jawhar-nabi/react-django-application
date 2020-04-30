@@ -8,7 +8,7 @@ import { Accueil } from './pages/accueil';
 import { Collaborateurs } from './components/collaborateurs';
 import { Test } from './components/test';
 import Login from './pages/login';
-import { Profil } from './pages/profil';
+import  Profil  from './pages/profil';
 import { MyBooks } from './pages/myBooks';
 import { Forum } from './pages/forum';
 import { Contact } from './pages/contact';
@@ -25,7 +25,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { loadUser } from './actions/auth';
 import { getbooks } from './actions/books-action';
-
+import  DesignerAdmin  from './pages/admin/designerAdmin';
 
 
 
@@ -72,8 +72,9 @@ class App extends Component {
                 <Route path="/shop" component={all} />
 
                 <Route path="/crudbooks" component= {Crudbooks} />
+                
 
-
+                <Route path="/DesignerAdmin" component= {DesignerAdmin} />
 
 
               </Switch>
