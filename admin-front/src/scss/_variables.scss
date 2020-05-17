@@ -1,0 +1,88 @@
+// Variable overrides
+
+$color-G:#2f353a !default;
+$primary-cl :#ffffff !default;
+
+
+
+
+
+//----------------------------------------------------------------
+
+$color-b0: #334d84f6 !default; //fb
+$color-b1:#3f729bcc !default; //insta
+$color-b2:#0e77a8f6 !default; //linkdin
+$color-b3:#00abeecc !default; //twitter
+$color-b00: #334d84 !default; 
+$color-b11:#3f729b !default; 
+$color-b22:#0e77a8 !default; 
+$color-b33:#00abee !default; 
+$color-other:#accf0e !default; 
+
+
+$colors: () !default;
+$colors: map-merge(
+  (
+    //added by me 
+    "clr-b0":       $color-b0,
+    "clr-b1":       $color-b1,
+    "clr-b2":       $color-b2,
+    "clr-b3":       $color-b3,
+    "clr-b00":       $color-b00,
+    "clr-b11":       $color-b11,
+    "clr-b22":       $color-b22,
+    "clr-b33":       $color-b33,
+    "clr-other":    $color-other
+  ),
+  $colors
+);
+
+
+//----------------------------------------------------------------
+
+
+
+//-------------------------------------------------------
+$bleu0 : $color-b0 !default;
+$bleu1 : $color-b1 !default;
+$bleu2 : $color-b2 !default;
+$bleu3 : $color-b3 !default;
+$bleu00 : $color-b00 !default;
+$bleu11 : $color-b11 !default;
+$bleu22 : $color-b22 !default;
+$bleu33 : $color-b33 !default;
+$bleuother : $color-other !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+  (
+    "bleu0": $bleu0,
+    "bleu1": $bleu1,
+    "bleu2": $bleu2,
+    "bleu3": $bleu3,
+    "bleu00": $bleu00,
+    "bleu11": $bleu11,
+    "bleu22": $bleu22,
+    "bleu33": $bleu33,
+    "bleuother": $bleuother
+        
+  ),
+  $theme-colors
+);
+
+
+//----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
