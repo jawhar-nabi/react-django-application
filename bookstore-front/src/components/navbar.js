@@ -12,41 +12,41 @@ export class Navbar extends Component {
     auth: PropTypes.object.isRequired,
     logout: PropTypes.func.isRequired,
   };
- /* UNSAFE_componentWillMount(){
-    let  tokenStr='9b34631242c5963bd35c46f3f1cb9987caed120c3b7fd8f354f3daf6e9af774b';
-    axios({
-      method: 'get',
-      url: 'http://127.0.0.1:8000/api/auth/user',
-      headers:{
-        // 'Access-Control-Allow-Origin': true,
-        Authorization: `Token ${tokenStr}`, 'Content-Type': 'application/json'}
-      })
-    .then(res => {
-      this.reader = res.data;
-      console.log("Good al hamdoulelah ");
-      
-
-    }).catch(console.log("***************Token user not working**************************"));
-
-  }
-  renderProfildetails(){
-  return( <Nav className="ml-auto" navbar>
-      
-  <UncontrolledDropdown setActiveFromChild>
-    <DropdownToggle tag="a" className="nav-link" caret>
-      {this.state.reader.name}
-    </DropdownToggle>
-    <DropdownMenu>
-      <DropdownItem tag="a" href="/blah" active>Link</DropdownItem>
-    </DropdownMenu>
-  </UncontrolledDropdown>
-</Nav>);
-  }*/
+  /* UNSAFE_componentWillMount(){
+     let  tokenStr='9b34631242c5963bd35c46f3f1cb9987caed120c3b7fd8f354f3daf6e9af774b';
+     axios({
+       method: 'get',
+       url: 'http://127.0.0.1:8000/api/auth/user',
+       headers:{
+         // 'Access-Control-Allow-Origin': true,
+         Authorization: `Token ${tokenStr}`, 'Content-Type': 'application/json'}
+       })
+     .then(res => {
+       this.reader = res.data;
+       console.log("Good al hamdoulelah ");
+       
+ 
+     }).catch(console.log("***************Token user not working**************************"));
+ 
+   }
+   renderProfildetails(){
+   return( <Nav className="ml-auto" navbar>
+       
+   <UncontrolledDropdown setActiveFromChild>
+     <DropdownToggle tag="a" className="nav-link" caret>
+       {this.state.reader.name}
+     </DropdownToggle>
+     <DropdownMenu>
+       <DropdownItem tag="a" href="/blah" active>Link</DropdownItem>
+     </DropdownMenu>
+   </UncontrolledDropdown>
+ </Nav>);
+   }*/
 
 
   render() {
 
-    const {isAuthenticated,user} = this.props.auth;
+    const { isAuthenticated, user } = this.props.auth;
 
     const userLinks = (
       <ul className="nav justify-content-end">
@@ -90,14 +90,11 @@ export class Navbar extends Component {
                   <div className="col-lg-8"> </div>
 
                   <div className="col-lg-2">
-                  {isAuthenticated ? userLinks : authLinks}
-
-     {/*this.renderProfildetails()*/}
-   
-
+                    {isAuthenticated ? userLinks : authLinks}
+                    {/*this.renderProfildetails()*/}
                   </div>
-                
-                
+
+
                 </div>
 
                 {/*<ul className="nav justify-content-end">
@@ -111,9 +108,9 @@ export class Navbar extends Component {
 
 
 
-     </div>
-    
-    </div>
+              </div>
+
+            </div>
 
             <div className="header-bottom bg-primary">
               <div className="container">
@@ -230,7 +227,7 @@ export class Navbar extends Component {
                   </div>
                   <div className="col-lg-3">
                     <nav className="category-nav white-nav  ">
-                    <Search/>
+                      <Search />
                     </nav>
                   </div>
 
@@ -249,9 +246,9 @@ export class Navbar extends Component {
 
                         {/* Shop */}
                         {isAuthenticated ?
-                        <li className="menu-item">
-                          <Link to="/profil">Profil</Link>
-                        </li> : null }
+                          <li className="menu-item">
+                            <Link to="/profil">Profil</Link>
+                          </li> : null}
                         {/* Pages */}
                         <li className="menu-item has-children">
                           <Link to="/myBooks">Livres</Link>
@@ -309,9 +306,9 @@ export class Navbar extends Component {
                 </div>
               </div>
             </div>
-         
-         
-         
+
+
+
           </div>
           <div className="site-mobile-menu">
             <header className="mobile-header d-block d-lg-none pt--10 pb-md--10">

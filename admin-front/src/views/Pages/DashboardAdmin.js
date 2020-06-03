@@ -1,5 +1,7 @@
 import React, { Component,Suspense } from 'react';
 import { Col, Row } from 'reactstrap';
+import axios from 'axios';
+import { connect } from 'react-redux';
 const SocialMedia = React.lazy(() => import('../components/SocialMedia'));
 const SiteInNumbers = React.lazy(() => import('../components/SiteInNumbers'));
 const SiteVisitors = React.lazy(() => import('../components/SiteVisitors'));
@@ -11,7 +13,8 @@ const SiteUsers = React.lazy(() => import('../components/SiteUsers'));
 const StatisticsTypeBooks = React.lazy(() => import('../components/StatisticsTypeBooks'));
 
 
-class DashboardAdmin extends Component {
+
+export class DashboardAdmin extends React.Component {
 
     constructor(props) {
         super(props);
@@ -40,6 +43,8 @@ class DashboardAdmin extends Component {
     loading = () => <div className="animated fadeIn pt-1 text-center">Loading...</div>
 
     render() {
+        console.log("test ");
+        console.log(" page dashboard admin");
 
         return (
             <div className="animated fadeIn" background-color="red" >
@@ -68,6 +73,13 @@ class DashboardAdmin extends Component {
             </div>
         );
     }
-}
+};
 
-export default DashboardAdmin;
+
+function mapStateToProps(state) {
+    return {
+      books: state.listBooks
+    };
+  };
+  
+  export default connect(mapStateToProps)(DashboardAdmin);

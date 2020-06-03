@@ -1,4 +1,4 @@
-#!d:\bookstore\env\scripts\python.exe
+#!c:\react-django-application\env\scripts\python.exe
 from django.core import management
 
 if __name__ == "__main__":

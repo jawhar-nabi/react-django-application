@@ -20,16 +20,30 @@ import { ChallengePage } from './pages/challengePage';
 import { product } from './components/product-detail';
 import { all } from './pages/all-books';
 import  Crudbooks  from './pages/admin/crudbooks';
+
+
+
+
 import axios from 'axios';
 import { Provider } from 'react-redux';
 import store from './store';
 import { loadUser } from './actions/auth';
+
+
 import { getbooks } from './actions/books-action';
 import  DesignerAdmin  from './pages/admin/designerAdmin';
+//Uma
+import Uma from './pages/Uma';
+import Log from './pages/Log';
+import Register from './pages/Register';
+
 
 
 
 class App extends Component {
+
+
+
   componentDidMount() {
     store.dispatch(loadUser());
     axios.get('http://localhost:8000/api/pages/books/')
@@ -40,6 +54,10 @@ class App extends Component {
       .catch(err => console.log('erreur..', err));
   }
 
+
+
+
+  
   render() {
 
     return (
@@ -48,10 +66,6 @@ class App extends Component {
           <div className="container">
             <Router>
               <Navbar />
-
-
-
-
               <Switch>
                 <Route exact path="/" component={Accueil} />
                 <Route path="/test" component={Test} />
@@ -65,6 +79,11 @@ class App extends Component {
                 <Route path="/listeBooks" component={ListeBooks} />
                 <Route path="/detailBook" component={DetailBook} />
                 <Route path="/challengePage" component={ChallengePage} />
+                {/* Uma */}
+                <Route path="/Uma" component={Uma} />
+                <Route path="/Log" component={Log} />
+                <Route path="/Register" component={Register} />
+
 
                 {/* <Route  path="/login" component={LoginForm}/> */}
                 <Route path="/product-detail" component={product} />

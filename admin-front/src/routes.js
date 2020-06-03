@@ -26,7 +26,7 @@ const StatisticsByUserPage = React.lazy(() => import('./views/Pages/StatisticsBy
 
 
 const routes = [
-  { path: '/', exact: true, name: 'Home' },
+
   ///added by me
 
   //_Nav : 

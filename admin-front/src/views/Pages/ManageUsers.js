@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom'
 import React, { Component, lazy } from 'react';
 import { Col, Pagination, PaginationItem, PaginationLink, Row } from 'reactstrap';
+import axios from 'axios';
+import { connect } from 'react-redux';
 
 const UsersList = React.lazy(() => import('../components/UsersList'));
 
+export class ManageUsers extends React.Component {
 
-class ManageUsers extends Component {
 
     render() {
         return (
@@ -28,7 +30,7 @@ class ManageUsers extends Component {
                     </Col>
 
                     <Col md="2">
-                    <Link to="/Register" className="btn btn-primary d-block  cui-user-follow icons   justify-end" >  Add User  </Link>
+                        <a href="/register" className="btn btn-primary d-block  cui-user-follow icons   justify-end" >Add User</a>
                     </Col>
 
                 </Row>
@@ -36,6 +38,15 @@ class ManageUsers extends Component {
             </div>
         );
     }
-}
+};
 
-export default ManageUsers;
+
+
+
+function mapStateToProps(state) {
+    return {
+        books: state.listBooks
+    };
+};
+
+export default connect(mapStateToProps)(ManageUsers);
