@@ -16467,21 +16467,27 @@ input[type="number"] {
     color: #fff; }
 
 .header-search-block {
-  position: relative; }
+  position: relative;
+width: 70%;
+margin-right: 0;
+margin-left: 20% }
   .header-search-block input {
     font-size: 16px;
     color: #333;
-    width: 100%;
+    width: 90%;
     height: 52px;
     float: none;
     font-weight: 400;
     background: #fff;
     border: 2px solid #eee;
     border-radius: 3px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px; 
+
     -webkit-border-radius: 3px;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    padding: 0 125px 0 20px; }
+    padding: 0 15% 0 10px; }
     .header-search-block input:focus {
       outline: none;
       -webkit-box-shadow: none;
@@ -16490,19 +16496,19 @@ input[type="number"] {
     position: absolute;
     top: 0;
     right: 0;
-    background: #62ab00;
-    border: 0;
+    background: #61ab00;
+    border: 1px solid #eee;
     line-height: 52px;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
     margin: 0;
     font-size: 15px;
     font-weight: 700;
-    padding: 0 35px;
+    padding: 0 10px;
     color: #fff;
     border-radius: 0;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px; }
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px; }
 
 .cart-widget {
   display: -webkit-box;

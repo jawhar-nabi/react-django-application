@@ -1,0 +1,40 @@
+.namediv{
+    display: inline;
+}
+.A{
+    visibility:hidden ;
+}
+
+.cardimg{
+    border-radius: 50%;
+}
+.profil{
+    font-family:Verdana ;
+}
+.all{
+    width: 80%;
+    position: relative;
+    margin: 10px 2%;
+    color: #62ab00 ;
+    display: inline;
+}
+.contact{
+    border:2px solid brown;
+    border-radius: 15px;
+    color: #62ab00;
+    padding: 30px;
+    margin: 20px;
+    
+}
+.a{
+    width: 80%;
+}
+.pimg{
+    border-radius: 50%;
+    height: 30%;
+    width: 30%;
+}
+.rect{
+    padding-left: 30%;
+    border: 2px solid gray;
+}
