@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Bar, Line } from 'react-chartjs-2';
+import {Link} from 'react-router-dom';
 
 import {
   Badge,
@@ -183,8 +184,10 @@ class SiteInNumbers extends Component {
           <Col xs="12" sm="6" lg="3">
             <Card className="text-white bg-B0">
               <CardBody className="pb-0">
+                <a href="http://localhost:3001/">
                 <div className="text-value">visit </div>
                 <div className="text-value">E-library</div>
+                </a>
               </CardBody>
               <div className="chart-wrapper" style={{ height: '30px' }}>
                 <Line data={cardChartData3} options={cardChartOpts3} height={30} />

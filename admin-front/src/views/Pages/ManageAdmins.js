@@ -18,7 +18,7 @@ export class ManageAdmins extends React.Component {
   };
 
   render() {
-    if (this.props.isAuthenticated) {
+    // if (this.props.isAuthenticated) {
 
       return (
         <div className="animated fadeIn" background-color="red" >
@@ -60,10 +60,10 @@ export class ManageAdmins extends React.Component {
         </div>
       );
     }
-    else{
-      return <div>mch cncté</div>
-    }
-  }
+    // else{
+    //   return <div>mch cncté</div>
+    // }
+  // }
 };
 
 

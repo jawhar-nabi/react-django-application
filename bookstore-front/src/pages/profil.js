@@ -5,6 +5,7 @@ import Amazon from '../images/collaborateurs/amazon.jpg';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+
 class Profil extends React.Component {
     static propTypes = {
         auth: PropTypes.object.isRequired,
@@ -112,3 +113,4 @@ const mapStateToProps = (state) => ({
 
 
 export default connect(mapStateToProps)(Profil);
+

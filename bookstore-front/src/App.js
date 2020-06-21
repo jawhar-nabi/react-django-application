@@ -9,18 +9,20 @@ import { Collaborateurs } from './components/collaborateurs';
 import { Test } from './components/test';
 import Login from './pages/login';
 import  Profil  from './pages/profil';
-import { MyBooks } from './pages/myBooks';
+import  MyBooks  from './pages/myBooks';
 import { Forum } from './pages/forum';
 import { Contact } from './pages/contact';
 import { Cover } from './components/cover';
 import { Book } from './components/book';
 import { ListeBooks } from './pages/listeBooks';
-import { DetailBook } from './pages/detailBook';
+import DetailBook  from './pages/detailBook';
 import { ChallengePage } from './pages/challengePage';
 import { product } from './components/product-detail';
 import { all } from './pages/all-books';
 import  Crudbooks  from './pages/admin/crudbooks';
 
+
+import { Evnt } from './pages/evnt';
 
 
 
@@ -94,6 +96,10 @@ class App extends Component {
                 
 
                 <Route path="/DesignerAdmin" component= {DesignerAdmin} />
+
+
+
+                <Route path="/evnt" component= {Evnt} />
 
 
               </Switch>

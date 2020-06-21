@@ -57,6 +57,12 @@ class DefaultAside extends Component {
         </Nav>
         <TabContent activeTab={this.state.activeTab}>
  
+
+
+
+
+
+ 
           <TabPane tabId="2" className="p-3">
             <div className="message">
               <div className="py-3 pb-5 mr-3 float-left">
@@ -143,6 +149,9 @@ class DefaultAside extends Component {
               </small>
             </div>
           </TabPane>
+
+
+
           <TabPane tabId="3" className="p-3">
             <h6>Settings</h6>
 

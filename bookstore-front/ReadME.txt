@@ -11,3 +11,11 @@ npm i redux-devtools-extension
 npm i redux
 npm i react-redux 
 npm i redux-thunk
+
+
+==== new istall :
+npm install @material-ui/core
+npm install --save bootstrap
+npm install --save reactstrap react react-dom
+npm install @material-ui/lab
+

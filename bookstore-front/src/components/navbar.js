@@ -50,9 +50,9 @@ export class Navbar extends Component {
 
     const userLinks = (
       <ul className="nav justify-content-end">
-        <span className="navbar-text mr-3">
+        {/* <span className="navbar-text mr-3">
           <strong>{user ? `Welcome ${user.first_name} ${user.last_name}` : ''}</strong>
-        </span>
+        </span> */}
         <li className="nav-item">
           <button onClick={this.props.logout} class="btn btn-outline-secondary">
             Logout
@@ -244,26 +244,26 @@ export class Navbar extends Component {
                           <Link to="/">Accueil</Link>
                         </li>
 
+
+
+{/* need cnx */}
                         {/* Shop */}
                         {isAuthenticated ?
                           <li className="menu-item">
                             <Link to="/profil">Profil</Link>
                           </li> : null}
-                        {/* Pages */}
-                        <li className="menu-item has-children">
-                          <Link to="/myBooks">Livres</Link>
-                          <ul className="sub-menu">
-                            <li><a href="cart.html">Cart</a></li>
-                            <li><a href="checkout.html">Checkout</a></li>
-                            <li><a href="compare.html">Compare</a></li>
-                            <li><a href="wishlist.html">Wishlist</a></li>
-                            <li><a href="login-register.html">Login Register</a></li>
-                            <li><a href="my-account.html">My Account</a></li>
-                            <li><a href="order-complete.html">Order Complete</a></li>
-                            <li><a href="faq.html">Faq</a></li>
-                            <li><a href="contact-2.html">contact 02</a></li>
-                          </ul>
-                        </li>
+
+                          {isAuthenticated ?
+                          <li className="menu-item">
+                            <Link to="/myBooks">Mes Livres</Link>
+                          </li> : null}
+                       
+{/* ** */}
+
+
+
+                   
+
                         {/* Blog */}
                         <li className="menu-item has-children mega-menu">
                           <Link to="/forum">Forum</Link>
