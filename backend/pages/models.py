@@ -8,7 +8,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Book(models.Model):
     
-    #user        = models.ManyToManyField(settings.AUTH_USER_MODEL) 
+    #iduser       = models.ManyToManyField(settings.AUTH_USER_MODEL) 
     isbn        = models.CharField(max_length=120, null=True, blank=True)
     title       = models.CharField(max_length=120, null=True, blank=True)
     auteur      = models.CharField(max_length=120, null=True, blank=True)
@@ -20,6 +20,7 @@ class Book(models.Model):
 
     @property
     def owner(self):
+
         return self.auteur
 
 
@@ -39,7 +40,17 @@ class Type_Book(models.Model):
   
 class Feedback(models.Model):
     
-    user             = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE) 
-    book             = models.ForeignKey(Book, on_delete=models.CASCADE) 
+    #user             = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE) 
+    #book             = models.ForeignKey(Book, on_delete=models.CASCADE) 
     etat             = models.IntegerField( default=0,validators=[MaxValueValidator(0), MinValueValidator(3)]) 
     avis             = models. NullBooleanField()
+
+
+######search 
+
+class Search(models.Model):
+    
+    iduser      = models.ForeignKey(settings.AUTH_USER_MODEL ,on_delete=models.CASCADE) 
+    content     = models.TextField(max_length=120, null=True, blank=True)
+    timestamp   = models.DateTimeField(auto_now_add=True)
+ 

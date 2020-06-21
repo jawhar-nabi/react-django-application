@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #url(r'^pages/',include("Pages.urls",namespace='pages')),
     url('api/pages/', include(('pages.api.urls','Pages'), namespace='api-pages')),
+    url('pages/', include(('pages.urls','Pages'), namespace='api-pages-bar')),
     path('', include('accounts.urls'))
 
 ]

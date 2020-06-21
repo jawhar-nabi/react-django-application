@@ -1,0 +1,120 @@
+
+    
+   .wrapper{
+     width:700px;
+     margin:0 auto;
+
+   }
+   
+   .menu ul{
+   /*  maring:0;*/
+     padding:0px;
+     width: 800px;
+     list-style:none;
+   }
+   .menu ul li{
+   
+       padding:20px;
+       margin-top:20px;
+       background-color:rgba(255,255,255,0.9);
+      -webkit-border-radius:3px;
+      -moz-border-radius:3px;
+       border-radius:3px;
+      -webkit-box-shadow: 0px 0px 2px #888888;
+      -moz-box-shadow: 0px 0px 2px #888888;
+        box-shadow: 0px 0px 2px #888888;
+       
+   }
+   .head{ 
+     padding:20px;
+     color:red;
+     font-size:36px;
+     text-align:center;
+     background-color:#ed6f70;
+     color:#fff;
+     -webkit-border-radius:3px;
+      -moz-border-radius:3px;
+       border-radius:3px;
+     -webkit-box-shadow: 0px 0px 2px #888888;
+     -moz-box-shadow: 0px 0px 2px #888888;
+        box-shadow: 0px 0px 2px #888888;
+   }
+   .proPic,.wrapper img{
+     display:inline-block;
+     width:80px;
+     height:80px;
+   
+   
+   }
+   
+   .wrapper li span{
+     font-size:16px;
+   
+     color:#a0a29d;
+     margin-right:40px;
+      height: 32px;
+     line-height: 32px;
+   
+    
+   }
+   .likes:before{
+     content:url("https://cdn0.iconfinder.com/data/icons/users-android-l-lollipop-icon-pack/24/group2-32.png");
+       vertical-align: -30%;
+     margin-right:2%;
+     opacity: 0.4;
+       filter: alpha(opacity=40); /* For IE8 and earlier */
+   }
+   .social.photo:before{
+     content:url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-camera-32.png");
+       vertical-align: -25%;
+     margin-right:2%;
+     opacity: 0.4;
+       filter: alpha(opacity=40); /* For IE8 and earlier */
+   }
+   .comments:before{
+   
+     content:url("https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/bubble-24-24.png");
+      vertical-align: -25%;
+     margin-right:2%;
+     opacity: 0.4;
+       filter: alpha(opacity=40); /* For IE8 and earlier */
+   }
+   .info{
+     width:75%;
+   
+     margin:0;
+     margin-left:5%;
+     display:inline-block;
+   
+     
+   }
+   
+   .social{
+      
+      padding-top:20px; 
+   }
+   .info h1{
+    color:green;
+
+   }
+   
+   .info h3{
+   
+     color:greenyellow;
+     margin:0;
+     padding-bottom:20px;
+     font-size:10px;
+     font-weight:100;
+     border-bottom:1px solid #e0e1dd;
+   }
+   .info h3:after{
+     
+   content:url("https://cdn3.iconfinder.com/data/icons/simple-files-1/128/Like-32.png");
+    float:right;
+     -webkit-filter: sepia(70%);
+     filter:  sepia(70%);
+   }
+   .fav{
+     float:right;
+   }
+   

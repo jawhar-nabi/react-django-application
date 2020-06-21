@@ -6,37 +6,37 @@ import PropTypes from 'prop-types';
 import { logout } from '../actions/auth';
 
 
+import axios from 'axios';
 
 export class Navbar extends Component {
   static propTypes = {
     auth: PropTypes.object.isRequired,
     logout: PropTypes.func.isRequired,
   };
- /* UNSAFE_componentWillMount(){
-    let  tokenStr='9b34631242c5963bd35c46f3f1cb9987caed120c3b7fd8f354f3daf6e9af774b';
-    axios({
-      method: 'get',
-      url: 'http://127.0.0.1:8000/api/auth/user',
-      headers:{
-        // 'Access-Control-Allow-Origin': true,
-        Authorization: `Token ${tokenStr}`, 'Content-Type': 'application/json'}
-      })
-    .then(res => {
-      this.reader = res.data;
-      console.log("Good al hamdoulelah ");
-      
 
-    }).catch(console.log("***************Token user not working**************************"));
-
+  
+  constructor(props) {
+    super(props);
+    this.state = { message: "" }    
   }
-  renderProfildetails(){
+/*sendData = (att) => {
+    this.props.parentCallbackNav(att);
+ }
+ callbackFunction = (childData) => {
+          this.setState({message: childData});
+          console.log("1........from search to navbar .........\n",this.state.message);
+          this.sendData(this.state.message);
+  }
+*/
+ 
+  /* renderProfildetails(){
   return( <Nav className="ml-auto" navbar>
       
   <UncontrolledDropdown setActiveFromChild>
     <DropdownToggle tag="a" className="nav-link" caret>
       {this.state.reader.name}
     </DropdownToggle>
-    <DropdownMenu>
+     <DropdownMenu>
       <DropdownItem tag="a" href="/blah" active>Link</DropdownItem>
     </DropdownMenu>
   </UncontrolledDropdown>
@@ -92,7 +92,6 @@ export class Navbar extends Component {
                   <div className="col-lg-2">
                   {isAuthenticated ? userLinks : authLinks}
 
-     {/*this.renderProfildetails()*/}
    
 
                   </div>
@@ -100,14 +99,7 @@ export class Navbar extends Component {
                 
                 </div>
 
-                {/*<ul className="nav justify-content-end">
-                         <li className="nav-link">
-                      <Link to="/register" className="nav-Link">Register</Link>
-                    </li> 
-                         <li className="nav-link">
-                      <Link to="/login" className="nav-Link">Login</Link>
-                    </li>
-                  </ul>  */ }
+          
 
 
 
@@ -230,7 +222,13 @@ export class Navbar extends Component {
                   </div>
                   <div className="col-lg-3">
                     <nav className="category-nav white-nav  ">
-                    <Search/>
+                      
+                    {/*   <Search parentCallback={this.callbackFunction}/>
+                      {console.log("''''''''''now'''''''''''''") }*/}
+
+
+
+                      <Search/>
                     </nav>
                   </div>
 

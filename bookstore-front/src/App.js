@@ -26,7 +26,7 @@ import store from './store';
 import { loadUser } from './actions/auth';
 import { getbooks } from './actions/books-action';
 import  DesignerAdmin  from './pages/admin/designerAdmin';
-
+import {Searchpage} from './pages/searchpage'
 
 
 class App extends Component {
@@ -39,6 +39,17 @@ class App extends Component {
         ))
       .catch(err => console.log('erreur..', err));
   }
+  constructor(props) {
+    super(props);
+    this.state = { data_search: "" }    
+  }
+
+  callbackNavFunction = (childData) => {
+          this.setState({data_search: childData});
+          console.log("2........from navbar to app.........\n",this.state.data_search);
+
+  }
+
 
   render() {
 
@@ -47,7 +58,7 @@ class App extends Component {
         <React.Fragment>
           <div className="container">
             <Router>
-              <Navbar />
+              <Navbar parentCallbackNav={this.callbackNavFunction} />
 
 
 
@@ -58,7 +69,13 @@ class App extends Component {
                 <Route path="/login" component={Login} />
                 <Route path="/profil" component={Profil} />
                 <Route path="/myBooks" component={MyBooks} />
-                <Route path="/forum" component={Forum} />
+                {/*<Route path="/forum" component={() => <Forum dataFromParent = {this.state.data_search}/>}/>
+               */}
+                <Route path="/searchpage" component={Searchpage}/>
+                <Route path="/forum" component={Forum}/>
+
+
+           
                 <Route path="/contact" component={Contact} />
                 <Route path="/cover" component={Cover} />
                 <Route path="/book" component={Book} />
