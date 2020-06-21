@@ -23,12 +23,12 @@ export class Searchpage extends Component{
       if(this.props.location.state.searchdone===true){  
         var config = {
           method: 'get',
-          url: 'http://127.0.0.1:8000/pages/searchurl/aa',
+          url: 'http://127.0.0.1:8000/pages/searchurl/'+this.props.location.state.box,
           headers: { }  
         };
         
         axios(config) 
-        .then(res => {
+        .then(res => {vscode://vscode.github-authentication/did-authenticate?windowId=1&code=9d29b6d3dece0b20f1d1&state=67cfadca-78b8-4c98-84a2-ebfcb2628658
           console.log("#######################    search data    ####################################");
           console.log(res.data);
           console.log(res.data.context);
