@@ -23,7 +23,7 @@ export class Searchpage extends Component{
       if(this.props.location.state.searchdone===true){  
         var config = {
           method: 'get',
-          url: 'http://127.0.0.1:8000/pages/searchurl/aa',
+          url: 'http://127.0.0.1:8000/pages/searchurl/'+this.props.location.state.box,
           headers: { }  
         };
         
