@@ -28,7 +28,7 @@ export class Searchpage extends Component{
         };
         
         axios(config) 
-        .then(res => {vscode://vscode.github-authentication/did-authenticate?windowId=1&code=9d29b6d3dece0b20f1d1&state=67cfadca-78b8-4c98-84a2-ebfcb2628658
+        .then(res => {
           console.log("#######################    search data    ####################################");
           console.log(res.data);
           console.log(res.data.context);
