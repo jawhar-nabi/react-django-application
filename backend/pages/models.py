@@ -8,12 +8,14 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Book(models.Model):
     
-    #iduser       = models.ManyToManyField(settings.AUTH_USER_MODEL) 
+    #iduser      = models.ManyToManyField(settings.AUTH_USER_MODEL) 
     isbn        = models.CharField(max_length=120, null=True, blank=True)
     title       = models.CharField(max_length=120, null=True, blank=True)
     auteur      = models.CharField(max_length=120, null=True, blank=True)
     content     = models.TextField(max_length=120, null=True, blank=True)
     timestamp   = models.DateTimeField(auto_now_add=True)
+    img_path    = models.TextField(max_length=120, null=True, blank=True)
+
 
     def __str__(self):
         return str(self.user.username)
@@ -50,7 +52,7 @@ class Feedback(models.Model):
 
 class Search(models.Model):
     
-    iduser      = models.ForeignKey(settings.AUTH_USER_MODEL ,on_delete=models.CASCADE) 
+   # iduser      = models.ForeignKey(settings.AUTH_USER_MODEL ,on_delete=models.CASCADE) 
     content     = models.TextField(max_length=120, null=True, blank=True)
     timestamp   = models.DateTimeField(auto_now_add=True)
  

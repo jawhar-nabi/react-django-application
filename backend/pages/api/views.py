@@ -16,7 +16,7 @@ class BookCAPIView(generics.CreateAPIView):
 class BookDAPIView(generics.DestroyAPIView):
     lookup_field            = 'pk'
     queryset                = Book.objects.all() 
-    serializer_class        = BookDetailSerializer  
+    serializer_class        = BookListSerializer  
 
 class BookUAPIView (generics.UpdateAPIView):
     lookup_field            = 'pk'
