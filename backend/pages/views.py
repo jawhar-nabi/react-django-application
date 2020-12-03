@@ -4,9 +4,9 @@ from rest_framework.response import Response
 from apiclient.discovery import build
 
 def Search(request, item):
-    api_key = "AIzaSyCGarE1-XPHofLo8WnVonXO8fwXaXo2RH8"
+    api_key = "CREATE A KEY AND ADD IT HERE "
     resource = build("customsearch", 'v1', developerKey=api_key).cse()
-    result = resource.list(q=item, cx='018403607070829198531:9pekevtl2jq').execute()
+    result = resource.list(q=item, cx='ADD THE KEY').execute()
     result['items'][0]
     len(result['items'])
     return  JsonResponse(result)
