@@ -7,7 +7,7 @@
 * [Setup](#setup)
 
 ## General info
-This project is a WebSite for E -readers . It is a portail in which User can get a lot of books And if he can't find it in our websit we serve him  with  a real time list of searchs of the best secured websites books 'links .
+This project is a WebSite for E -readers . It is a portal in which User can get a lot of books And if he can't find it in our websit we serve him  with  a real time list of searchs of the best secured websites books 'links .
 
 ## More details 
 This project contains a full web app integration .
