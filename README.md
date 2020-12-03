@@ -29,9 +29,7 @@ To run this project, install it locally using npm:
 $ cd ./bookstorefront 
 $ npm install
 $ npm start
-
-``` 
-$ cd ./backend
+$ cd ../backend
 $ python3 manage.py makemigrations
 $ python3 manage.py makemigrations polls
 $ python3 manage.py migrate
