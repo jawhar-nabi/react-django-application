@@ -12,8 +12,11 @@ This project is a WebSite for E -readers . It is a portail in which User can get
 ## More details 
 This project contains a full web app integration .
 > It is composed basicly from :
-        - CRUDs for user admin and articles 
-        - Google Search Api Scraping and integration
+        * User interface 
+	* Admin interface 
+	* CRUDs for user admin and articles 
+        * Google Search Api Scraping and integration
+	
 	
 ## Technologies
 Project is created with:
